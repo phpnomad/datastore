@@ -9,48 +9,48 @@ trait WithDatastoreDecorator
 {
     protected Datastore $datastoreHandler;
 
-    public function find($id): DataModel
-    {
-        // TODO: Implement find() method.
-    }
-
     public function where(array $conditions, ?int $limit = null, ?int $offset = null): array
     {
-        // TODO: Implement where() method.
+        return $this->datastoreHandler->where($conditions, $limit, $offset);
     }
 
     public function findBy(string $field, $value): DataModel
     {
-        // TODO: Implement findBy() method.
+        return $this->datastoreHandler->findBy($field, $value);
     }
 
     public function create(array $attributes): DataModel
     {
-        // TODO: Implement create() method.
-    }
-
-    public function update($id, array $attributes): void
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete($id): void
-    {
-        // TODO: Implement delete() method.
+        return $this->datastoreHandler->create($attributes);
     }
 
     public function deleteWhere(array $conditions): void
     {
-        // TODO: Implement deleteWhere() method.
+        $this->datastoreHandler->deleteWhere($conditions);
     }
 
-    public function count(array $conditions = []): int
+    public function updateCompound(array $ids, array $attributes): void
     {
-        // TODO: Implement count() method.
+        $this->datastoreHandler->updateCompound($ids, $attributes);
+    }
+
+    public function find($id): DataModel
+    {
+        return $this->datastoreHandler->find($id);
+    }
+
+    public function update($id, array $attributes): void
+    {
+        $this->datastoreHandler->update($id, $attributes);
+    }
+
+    public function delete($id): void
+    {
+        $this->datastoreHandler->delete($id);
     }
 
     public function findIds(array $conditions, ?int $limit = null, ?int $offset = null): array
     {
-        // TODO: Implement findIds() method.
+        return $this->datastoreHandler->findIds($conditions, $limit, $offset);
     }
 }

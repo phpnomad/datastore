@@ -50,11 +50,13 @@ interface Datastore
     public function deleteWhere(array $conditions): void;
 
     /**
-     * Count records with optional conditions.
+     * Update a record in the database.
      *
-     * @param array{column: string, operator: string, value: mixed}[] $conditions
-     * @return int
+     * @param array<string, int> $ids
+     * @param array<string, mixed> $attributes
+     * @return void
+     * @throws RecordNotFoundException
      * @throws DatastoreErrorException
      */
-    public function count(array $conditions = []): int;
+    public function updateCompound(array $ids, array $attributes): void;
 }

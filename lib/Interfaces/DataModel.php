@@ -2,6 +2,6 @@
 
 namespace Phoenix\Datastore\Interfaces;
 
-interface DataModel extends HasIntIdentity
+interface DataModel extends CanIdentify
 {
 }
