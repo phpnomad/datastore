@@ -25,12 +25,4 @@ trait WithSingleIdentity
     {
         return [$this->getId()];
     }
-
-    /**
-     * @return string[]
-     */
-    public static function getFieldsForIdentity(): array
-    {
-        return ['id'];
-    }
 }

@@ -24,11 +24,4 @@ interface JunctionContextProvider
      * @return string
      */
     public function getJunctionFieldName(): string;
-
-    /**
-     * Gets the attributes that this table can contribute to the junction table.
-     *
-     * @return array<string, mixed>
-     */
-    public function getCreateAttributes(): array;
 }
