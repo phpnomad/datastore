@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Phoenix\\Core\\": "lib/"
+            "Phoenix\\Datastore\\": "lib/"
         }
     },
     "autoload-dev": {
