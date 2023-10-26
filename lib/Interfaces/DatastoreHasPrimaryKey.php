@@ -6,7 +6,7 @@ use Phoenix\Database\Exceptions\RecordNotFoundException;
 use Phoenix\Datastore\Exceptions\DatastoreErrorException;
 use Phoenix\Datastore\Exceptions\DuplicateEntryException;
 
-interface WithPrimaryKey
+interface DatastoreHasPrimaryKey
 {
     /**
      * Retrieve a record by its primary key.

@@ -27,7 +27,6 @@ interface JunctionHandler
      * @param int $limit
      * @param int $offset
      * @return array
-     * @throws DuplicateEntryException
      * @throws DatastoreErrorException
      */
     public function getModelsFromResource(string $resource, int $id, int $limit, int $offset): array;
