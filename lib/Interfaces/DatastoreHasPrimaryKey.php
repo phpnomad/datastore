@@ -1,10 +1,10 @@
 <?php
 
-namespace Phoenix\Datastore\Interfaces;
+namespace PHPNomad\Datastore\Interfaces;
 
-use Phoenix\Database\Exceptions\RecordNotFoundException;
-use Phoenix\Datastore\Exceptions\DatastoreErrorException;
-use Phoenix\Datastore\Exceptions\DuplicateEntryException;
+use PHPNomad\Database\Exceptions\RecordNotFoundException;
+use PHPNomad\Datastore\Exceptions\DatastoreErrorException;
+use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
 
 interface DatastoreHasPrimaryKey
 {

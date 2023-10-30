@@ -1,9 +1,9 @@
 <?php
 
-namespace Phoenix\Datastore\Traits;
+namespace PHPNomad\Datastore\Traits;
 
-use Phoenix\Datastore\Interfaces\DataModel;
-use Phoenix\Datastore\Interfaces\Datastore;
+use PHPNomad\Datastore\Interfaces\DataModel;
+use PHPNomad\Datastore\Interfaces\Datastore;
 
 trait WithDatastoreDecorator
 {

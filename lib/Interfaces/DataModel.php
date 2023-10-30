@@ -1,6 +1,6 @@
 <?php
 
-namespace Phoenix\Datastore\Interfaces;
+namespace PHPNomad\Datastore\Interfaces;
 
 interface DataModel extends CanIdentify
 {

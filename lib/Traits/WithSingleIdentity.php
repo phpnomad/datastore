@@ -1,6 +1,6 @@
 <?php
 
-namespace Phoenix\Datastore\Traits;
+namespace PHPNomad\Datastore\Traits;
 
 trait WithSingleIdentity
 {

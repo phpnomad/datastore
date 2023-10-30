@@ -1,6 +1,6 @@
 <?php
 
-namespace Phoenix\Datastore\Exceptions;
+namespace PHPNomad\Datastore\Exceptions;
 
 class DuplicateEntryException extends DatastoreErrorException
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Phoenix\Datastore\Exceptions;
+namespace PHPNomad\Datastore\Exceptions;
 use Exception;
 
 class DatastoreErrorException extends Exception
