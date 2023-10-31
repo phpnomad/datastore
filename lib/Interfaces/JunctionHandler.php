@@ -20,7 +20,7 @@ interface JunctionHandler
     public function getIdsFromResource(string $resource, int $id, int $limit, int $offset): array;
 
     /**
-     * Fetch a list of DataModel objects specified resource table for the specified table.
+     * Fetch a list of DataModels from the central table for the specified table.
      *
      * @param string $resource
      * @param int $id
