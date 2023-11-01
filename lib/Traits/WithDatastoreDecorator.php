@@ -9,26 +9,37 @@ trait WithDatastoreDecorator
 {
     protected Datastore $datastoreHandler;
 
-    public function where(array $conditions, ?int $limit = null, ?int $offset = null): array
+    /** @inheritDoc */
+    public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null): array
     {
-        return $this->datastoreHandler->where($conditions, $limit, $offset);
+        return $this->datastoreHandler->andWhere($conditions, $limit, $offset);
     }
 
+    /** @inheritDoc */
+    public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null): array
+    {
+        return $this->datastoreHandler->orWhere($conditions, $limit, $offset);
+    }
+
+    /** @inheritDoc */
     public function findBy(string $field, $value): DataModel
     {
         return $this->datastoreHandler->findBy($field, $value);
     }
 
+    /** @inheritDoc */
     public function create(array $attributes): DataModel
     {
         return $this->datastoreHandler->create($attributes);
     }
 
+    /** @inheritDoc */
     public function deleteWhere(array $conditions): void
     {
         $this->datastoreHandler->deleteWhere($conditions);
     }
 
+    /** @inheritDoc */
     public function updateCompound(array $ids, array $attributes): void
     {
         $this->datastoreHandler->updateCompound($ids, $attributes);

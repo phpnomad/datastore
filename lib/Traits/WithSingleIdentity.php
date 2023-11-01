@@ -23,6 +23,6 @@ trait WithSingleIdentity
      */
     public function getIdentity(): array
     {
-        return [$this->getId()];
+        return ['id' => $this->getId()];
     }
 }

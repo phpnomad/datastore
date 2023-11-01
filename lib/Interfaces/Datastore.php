@@ -9,7 +9,7 @@ use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
 interface Datastore
 {
     /**
-     * Query with conditions.
+     * Query with conditions, using AND.
      *
      * @param array{column: string, operator: string, value: mixed}[] $conditions
      * @param positive-int|null $limit
@@ -17,7 +17,18 @@ interface Datastore
      * @return DataModel[]
      * @throws DatastoreErrorException
      */
-    public function where(array $conditions, ?int $limit = null, ?int $offset = null): array;
+    public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null): array;
+
+    /**
+     * Query with conditions, using OR.
+     *
+     * @param array{column: string, operator: string, value: mixed}[] $conditions
+     * @param positive-int|null $limit
+     * @param positive-int|null $offset
+     * @return DataModel[]
+     * @throws DatastoreErrorException
+     */
+    public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null): array;
 
     /**
      * Finds the first available record that has the specified value in the specified column.
