@@ -2,7 +2,7 @@
 
 namespace PHPNomad\Datastore\Traits;
 
-trait WithSingleIdentity
+trait WithSingleIntIdentity
 {
     protected int $id;
 
