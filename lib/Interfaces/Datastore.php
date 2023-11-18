@@ -17,7 +17,7 @@ interface Datastore
      * @return DataModel[]
      * @throws DatastoreErrorException
      */
-    public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null): array;
+    public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
 
     /**
      * Query with conditions, using OR.
@@ -28,7 +28,25 @@ interface Datastore
      * @return DataModel[]
      * @throws DatastoreErrorException
      */
-    public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null): array;
+    public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
+
+    /**
+     * Count the results with conditions, using AND.
+     *
+     * @param array{column: string, operator: string, value: mixed}[] $conditions
+     * @return int
+     * @throws DatastoreErrorException
+     */
+    public function countAndWhere(array $conditions): int;
+
+    /**
+     * Count the results with conditions, using OR.
+     *
+     * @param array{column: string, operator: string, value: mixed}[] $conditions
+     * @return int
+     * @throws DatastoreErrorException
+     */
+    public function countOrWhere(array $conditions): int;
 
     /**
      * Finds the first available record that has the specified value in the specified column.

@@ -10,15 +10,27 @@ trait WithDatastoreDecorator
     protected Datastore $datastoreHandler;
 
     /** @inheritDoc */
-    public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null): array
+    public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
     {
         return $this->datastoreHandler->andWhere($conditions, $limit, $offset);
     }
 
     /** @inheritDoc */
-    public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null): array
+    public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
     {
         return $this->datastoreHandler->orWhere($conditions, $limit, $offset);
+    }
+
+    /** @inheritDoc */
+    public function countAndWhere(array $conditions): int
+    {
+        return $this->datastoreHandler->countAndWhere($conditions);
+    }
+
+    /** @inheritDoc */
+    public function countOrWhere(array $conditions): int
+    {
+        return $this->datastoreHandler->countOrWhere($conditions);
     }
 
     /** @inheritDoc */
