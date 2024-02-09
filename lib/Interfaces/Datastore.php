@@ -9,6 +9,15 @@ use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
 interface Datastore
 {
     /**
+     * Gets the estimated number of records in this datastore.
+     * Note this is not intended to be 100% accurate, but should be close-enough for the majority of scenarios.
+     *
+     * @return int
+     * @throws DatastoreErrorException
+     */
+    public function getEstimatedCount(): int;
+
+    /**
      * Query with conditions, using AND.
      *
      * @param array{column: string, operator: string, value: mixed}[] $conditions

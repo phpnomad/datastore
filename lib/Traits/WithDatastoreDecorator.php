@@ -56,4 +56,10 @@ trait WithDatastoreDecorator
     {
         $this->datastoreHandler->updateCompound($ids, $attributes);
     }
+
+    /** @inheritDoc */
+    public function getEstimatedCount(): int
+    {
+        return $this->datastoreHandler->getEstimatedCount();
+    }
 }
