@@ -18,6 +18,18 @@ interface Datastore
     public function getEstimatedCount(): int;
 
     /**
+     * Query with conditions, using a combination of AND/OR.
+     * Classes implementing this should assume type and groupType are AND if they are not set.
+     *
+     * @param array{type?: string, groupType?: string, clauses: array{column: string, operator: string, value: mixed}[]}[] $conditions
+     * @param positive-int|null $limit
+     * @param positive-int|null $offset
+     * @return DataModel[]
+     * @throws DatastoreErrorException
+     */
+    public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
+
+    /**
      * Query with conditions, using AND.
      *
      * @param array{column: string, operator: string, value: mixed}[] $conditions
@@ -38,6 +50,16 @@ interface Datastore
      * @throws DatastoreErrorException
      */
     public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
+
+
+    /**
+     * Count the results with conditions, using AND/OR.
+     *
+     * @param array{type: string, clauses: array{column: string, operator: string, value: mixed}[]} $conditions
+     * @return int
+     * @throws DatastoreErrorException
+     */
+    public function countWhere(array $conditions): int;
 
     /**
      * Count the results with conditions, using AND.
