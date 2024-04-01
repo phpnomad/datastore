@@ -5,14 +5,8 @@ namespace PHPNomad\Datastore\Interfaces;
 /**
  * @template TModel of DataModel
  */
-interface ModelAdapter
+interface ModelAdapter extends CanConvertModelToArray
 {
-    /**
-     * @param TModel $model
-     * @return array
-     */
-    public function toArray(DataModel $model): array;
-
     /**
      * @param array $array
      * @return TModel
