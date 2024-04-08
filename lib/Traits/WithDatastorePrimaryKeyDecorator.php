@@ -18,6 +18,11 @@ trait WithDatastorePrimaryKeyDecorator
         return $this->datastoreHandler->find($id);
     }
 
+    public function findMultiple(array $ids): array
+    {
+        return $this->datastoreHandler->findMultiple($ids);
+    }
+
     public function update($id, array $attributes): void
     {
         $this->datastoreHandler->update($id, $attributes);

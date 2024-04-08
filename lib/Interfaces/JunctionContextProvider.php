@@ -14,7 +14,7 @@ interface JunctionContextProvider
     /**
      * Gets the datastore that binds to the opposite table.
      *
-     * @return Datastore
+     * @return Datastore&DatastoreHasPrimaryKey
      */
     public function getDatastore(): Datastore;
 
