@@ -32,6 +32,16 @@ interface JunctionHandler
     public function getModelsFromResource(string $resource, int $id, int $limit, int $offset): array;
 
     /**
+     * Fetch the number of records matching the specified ID
+     *
+     * @param string $resource
+     * @param int $id
+     * @return int
+     * @throws DatastoreErrorException
+     */
+    public function getCountFromResource(string $resource, int $id): int;
+
+    /**
      * Associates the specified ID with the junctioning ID of the other table.
      *
      * @param class-string<DataModel> $resource The name table the ID came from.

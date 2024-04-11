@@ -6,6 +6,7 @@ use PHPNomad\Database\Exceptions\RecordNotFoundException;
 use PHPNomad\Datastore\Exceptions\DatastoreErrorException;
 use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
 use PHPNomad\Datastore\Interfaces\DataModel;
+use PHPNomad\Datastore\Interfaces\Datastore;
 use PHPNomad\Datastore\Interfaces\DatastoreHasPrimaryKey;
 
 /**
@@ -15,6 +16,11 @@ use PHPNomad\Datastore\Interfaces\DatastoreHasPrimaryKey;
  */
 trait WithDatastorePrimaryKeyFacadeMethods
 {
+    private static function getDatastoreHasPrimaryKeyInstance(): DatastoreHasPrimaryKey
+    {
+        return static::instance()->getContainedInstance();
+    }
+
     /**
      * Retrieve a record by its primary key.
      *
@@ -25,7 +31,7 @@ trait WithDatastorePrimaryKeyFacadeMethods
      */
     public static function find(int $id): DataModel
     {
-        return static::instance()->getContainedInstance()->find($id);
+        return static::getDatastoreHasPrimaryKeyInstance()->find($id);
     }
 
     /**
@@ -40,7 +46,7 @@ trait WithDatastorePrimaryKeyFacadeMethods
      */
     public static function update($id, array $attributes): void
     {
-        static::instance()->getContainedInstance()->update($id, $attributes);
+        static::getDatastoreHasPrimaryKeyInstance()->update($id, $attributes);
     }
 
     /**
@@ -52,6 +58,6 @@ trait WithDatastorePrimaryKeyFacadeMethods
      */
     public static function delete($id): void
     {
-        static::instance()->getContainedInstance()->delete($id);
+        static::getDatastoreHasPrimaryKeyInstance()->delete($id);
     }
 }

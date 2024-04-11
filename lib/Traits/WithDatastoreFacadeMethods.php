@@ -6,14 +6,19 @@ use PHPNomad\Datastore\Exceptions\DatastoreErrorException;
 use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
 use PHPNomad\Datastore\Interfaces\DataModel;
 use PHPNomad\Datastore\Interfaces\Datastore;
+use PHPNomad\Facade\Abstracts\Facade;
 
 /**
  * @template TModel of DataModel
- * @method static instance()
- * @method Datastore getContainedInstance()
+ * @method static Facade instance()
  */
 trait WithDatastoreFacadeMethods
 {
+    private static function getFacadeInstance(): Datastore
+    {
+        return static::instance()->getContainedInstance();
+    }
+
     /**
      * Query with conditions, using AND.
      *
@@ -23,9 +28,9 @@ trait WithDatastoreFacadeMethods
      * @return DataModel[]
      * @throws DatastoreErrorException
      */
-    public static function andWhere(array $conditions, ?int $limit = null, ?int $offset = null): array
+    public static function andWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
     {
-       return static::instance()->getContainedInstance()->orWhere($conditions, $limit, $offset);
+       return static::getFacadeInstance()->andWhere($conditions, $limit, $offset, $orderBy, $order);
     }
 
     /**
@@ -37,9 +42,9 @@ trait WithDatastoreFacadeMethods
      * @return DataModel[]
      * @throws DatastoreErrorException
      */
-    public static function orWhere(array $conditions, ?int $limit = null, ?int $offset = null): array
+    public static function orWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
     {
-       return static::instance()->getContainedInstance()->andWhere($conditions, $limit, $offset);
+       return static::getFacadeInstance()->orWhere($conditions, $limit, $offset, $orderBy, $order);
     }
 
     /**
@@ -52,6 +57,6 @@ trait WithDatastoreFacadeMethods
      */
     public static function create(array $attributes): DataModel
     {
-       return static::instance()->getContainedInstance()->create($attributes);
+       return static::getFacadeInstance()->create($attributes);
     }
 }
