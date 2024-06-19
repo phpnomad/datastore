@@ -27,7 +27,7 @@ interface Datastore
      * @return DataModel[]
      * @throws DatastoreErrorException
      */
-    public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
+    public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC', string $parentOperator = 'AND'): array;
 
     /**
      * Query with conditions, using AND.

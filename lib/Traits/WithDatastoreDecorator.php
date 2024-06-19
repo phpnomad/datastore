@@ -9,9 +9,9 @@ trait WithDatastoreDecorator
 {
     protected Datastore $datastoreHandler;
 
-    public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
+    public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC', $parentOperator = 'AND'): array
     {
-        return $this->datastoreHandler->where($conditions, $limit, $offset, $orderBy, $order);
+        return $this->datastoreHandler->where($conditions, $limit, $offset, $orderBy, $order, $parentOperator);
     }
 
     public function countWhere(array $conditions): int
