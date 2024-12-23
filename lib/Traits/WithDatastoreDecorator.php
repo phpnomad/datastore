@@ -14,11 +14,6 @@ trait WithDatastoreDecorator
         return $this->datastoreHandler->where($conditions, $limit, $offset, $orderBy, $order);
     }
 
-    public function countWhere(array $conditions): int
-    {
-        return $this->datastoreHandler->countWhere($conditions);
-    }
-
     /** @inheritDoc */
     public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
     {
@@ -29,18 +24,6 @@ trait WithDatastoreDecorator
     public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
     {
         return $this->datastoreHandler->orWhere($conditions, $limit, $offset, $orderBy, $order);
-    }
-
-    /** @inheritDoc */
-    public function countAndWhere(array $conditions): int
-    {
-        return $this->datastoreHandler->countAndWhere($conditions);
-    }
-
-    /** @inheritDoc */
-    public function countOrWhere(array $conditions): int
-    {
-        return $this->datastoreHandler->countOrWhere($conditions);
     }
 
     /** @inheritDoc */

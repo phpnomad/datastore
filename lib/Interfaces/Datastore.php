@@ -2,10 +2,13 @@
 
 namespace PHPNomad\Datastore\Interfaces;
 
-use PHPNomad\Database\Exceptions\RecordNotFoundException;
 use PHPNomad\Datastore\Exceptions\DatastoreErrorException;
 use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
+use React\Dns\RecordNotFoundException;
 
+/**
+ * @template T of <DataModel>
+ */
 interface Datastore
 {
     /**
@@ -15,7 +18,7 @@ interface Datastore
      * @param array{type?: string, groupType?: string, clauses: array{column: string, operator: string, value: mixed}[]}[] $conditions
      * @param positive-int|null $limit
      * @param positive-int|null $offset
-     * @return DataModel[]
+     * @return T[]
      * @throws DatastoreErrorException
      */
     public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
@@ -26,7 +29,7 @@ interface Datastore
      * @param array{column: string, operator: string, value: mixed}[] $conditions
      * @param positive-int|null $limit
      * @param positive-int|null $offset
-     * @return DataModel[]
+     * @return T[]
      * @throws DatastoreErrorException
      */
     public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
@@ -37,45 +40,17 @@ interface Datastore
      * @param array{column: string, operator: string, value: mixed}[] $conditions
      * @param positive-int|null $limit
      * @param positive-int|null $offset
-     * @return DataModel[]
+     * @return T[]
      * @throws DatastoreErrorException
      */
     public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array;
-
-
-    /**
-     * Count the results with conditions, using AND/OR.
-     *
-     * @param array{type: string, clauses: array{column: string, operator: string, value: mixed}[]} $conditions
-     * @return int
-     * @throws DatastoreErrorException
-     */
-    public function countWhere(array $conditions): int;
-
-    /**
-     * Count the results with conditions, using AND.
-     *
-     * @param array{column: string, operator: string, value: mixed}[] $conditions
-     * @return int
-     * @throws DatastoreErrorException
-     */
-    public function countAndWhere(array $conditions): int;
-
-    /**
-     * Count the results with conditions, using OR.
-     *
-     * @param array{column: string, operator: string, value: mixed}[] $conditions
-     * @return int
-     * @throws DatastoreErrorException
-     */
-    public function countOrWhere(array $conditions): int;
 
     /**
      * Finds the first available record that has the specified value in the specified column.
      *
      * @param string $field
      * @param $value
-     * @return DataModel
+     * @return T
      * @throws DatastoreErrorException
      * @throws RecordNotFoundException
      */
@@ -85,7 +60,7 @@ interface Datastore
      * Insert a new record and return the instance.
      *
      * @param array<string, mixed> $attributes
-     * @return DataModel The created model.
+     * @return T The created model.
      * @throws DuplicateEntryException
      * @throws DatastoreErrorException
      */
