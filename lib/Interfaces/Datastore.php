@@ -12,17 +12,6 @@ use PHPNomad\Datastore\Exceptions\RecordNotFoundException;
 interface Datastore
 {
     /**
-     * Finds the first available record that has the specified value in the specified column.
-     *
-     * @param string $field
-     * @param $value
-     * @return T
-     * @throws DatastoreErrorException
-     * @throws RecordNotFoundException
-     */
-    public function findBy(string $field, $value): DataModel;
-
-    /**
      * Insert a new record and return the instance.
      *
      * @param array<string, mixed> $attributes

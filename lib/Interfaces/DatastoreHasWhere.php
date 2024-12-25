@@ -4,6 +4,7 @@ namespace PHPNomad\Datastore\Interfaces;
 
 
 use PHPNomad\Datastore\Exceptions\DatastoreErrorException;
+use PHPNomad\Datastore\Exceptions\RecordNotFoundException;
 
 /**
  * @template T of <DataModel>
@@ -51,4 +52,15 @@ interface DatastoreHasWhere {
      * @throws DatastoreErrorException
      */
     public function deleteWhere(array $conditions): void;
+
+    /**
+     * Finds the first available record that has the specified value in the specified column.
+     *
+     * @param string $field
+     * @param $value
+     * @return T
+     * @throws DatastoreErrorException
+     * @throws RecordNotFoundException
+     */
+    public function findBy(string $field, $value): DataModel;
 }
