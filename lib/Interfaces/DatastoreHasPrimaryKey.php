@@ -2,9 +2,9 @@
 
 namespace PHPNomad\Datastore\Interfaces;
 
-use PHPNomad\Database\Exceptions\RecordNotFoundException;
 use PHPNomad\Datastore\Exceptions\DatastoreErrorException;
 use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
+use PHPNomad\Datastore\Exceptions\RecordNotFoundException;
 
 interface DatastoreHasPrimaryKey
 {
@@ -45,6 +45,7 @@ interface DatastoreHasPrimaryKey
      * @param mixed $id
      * @return void
      * @throws DatastoreErrorException
+     * @throws RecordNotFoundException
      */
     public function delete($id): void;
 

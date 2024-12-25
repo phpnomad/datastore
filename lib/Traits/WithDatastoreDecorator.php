@@ -7,24 +7,10 @@ use PHPNomad\Datastore\Interfaces\Datastore;
 
 trait WithDatastoreDecorator
 {
-    protected Datastore $datastoreHandler;
-
-    public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
-    {
-        return $this->datastoreHandler->where($conditions, $limit, $offset, $orderBy, $order);
-    }
-
-    /** @inheritDoc */
-    public function andWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
-    {
-        return $this->datastoreHandler->andWhere($conditions, $limit, $offset, $orderBy, $order);
-    }
-
-    /** @inheritDoc */
-    public function orWhere(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
-    {
-        return $this->datastoreHandler->orWhere($conditions, $limit, $offset, $orderBy, $order);
-    }
+    /**
+     * @var Datastore
+     */
+    protected $datastoreHandler;
 
     /** @inheritDoc */
     public function findBy(string $field, $value): DataModel
@@ -36,12 +22,6 @@ trait WithDatastoreDecorator
     public function create(array $attributes): DataModel
     {
         return $this->datastoreHandler->create($attributes);
-    }
-
-    /** @inheritDoc */
-    public function deleteWhere(array $conditions): void
-    {
-        $this->datastoreHandler->deleteWhere($conditions);
     }
 
     /** @inheritDoc */
