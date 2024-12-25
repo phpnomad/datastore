@@ -48,15 +48,4 @@ interface DatastoreHasPrimaryKey
      * @throws RecordNotFoundException
      */
     public function delete($id): void;
-
-    /**
-     * Query the database with conditions.
-     *
-     * @param array{column: string, operator: string, value: mixed}[] $conditions
-     * @param positive-int|null $limit
-     * @param positive-int|null $offset
-     * @return int[]
-     * @throws DatastoreErrorException
-     */
-    public function findIds(array $conditions, ?int $limit = null, ?int $offset = null): array;
 }
