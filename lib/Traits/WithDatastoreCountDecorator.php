@@ -3,14 +3,13 @@
 namespace PHPNomad\Datastore\Traits;
 
 
-use PHPNomad\Datastore\Interfaces\Datastore;
 use PHPNomad\Datastore\Interfaces\DatastoreHasCounts;
 
 trait WithDatastoreCountDecorator {
     /**
-     * @var Datastore&DatastoreHasCounts
+     * @var DatastoreHasCounts
      */
-    protected Datastore $datastoreHandler;
+    protected $datastoreHandler;
 
     /** @inheritDoc */
     public function getEstimatedCount(): int
