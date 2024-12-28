@@ -5,7 +5,7 @@ namespace PHPNomad\Datastore\Traits;
 
 use PHPNomad\Datastore\Interfaces\DatastoreHasWhere;
 
-class WithDatastoreWhereDecorator {
+trait WithDatastoreWhereDecorator {
 
     /**
      * @var DatastoreHasWhere
