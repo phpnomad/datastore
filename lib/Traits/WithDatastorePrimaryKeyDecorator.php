@@ -8,9 +8,6 @@ use PHPNomad\Datastore\Interfaces\DatastoreHasPrimaryKey;
 
 trait WithDatastorePrimaryKeyDecorator
 {
-    /**
-     * @var Datastore&DatastoreHasPrimaryKey
-     */
     protected Datastore $datastoreHandler;
 
     public function find($id): DataModel
