@@ -8,10 +8,8 @@ use PHPNomad\Datastore\Interfaces\Datastore;
 trait WithDatastoreDecorator
 {
     /**
-     * @var Datastore
+     * @var Datastore $datastoreHandler
      */
-    protected $datastoreHandler;
-
     /** @inheritDoc */
     public function findBy(string $field, $value): DataModel
     {

@@ -7,10 +7,8 @@ use PHPNomad\Datastore\Interfaces\DatastoreHasCounts;
 
 trait WithDatastoreCountDecorator {
     /**
-     * @var DatastoreHasCounts
+     * @var $datastoreHandler
      */
-    protected $datastoreHandler;
-
     /** @inheritDoc */
     public function getEstimatedCount(): int
     {

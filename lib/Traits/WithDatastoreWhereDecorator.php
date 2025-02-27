@@ -2,16 +2,12 @@
 
 namespace PHPNomad\Datastore\Traits;
 
-
 use PHPNomad\Datastore\Interfaces\DatastoreHasWhere;
 
 trait WithDatastoreWhereDecorator {
-
     /**
-     * @var DatastoreHasWhere
+     * @var $datastoreHandler
      */
-    protected $datastoreHandler;
-
     public function where(array $conditions, ?int $limit = null, ?int $offset = null, ?string $orderBy = null, string $order = 'ASC'): array
     {
         return $this->datastoreHandler->where($conditions, $limit, $offset, $orderBy, $order);
