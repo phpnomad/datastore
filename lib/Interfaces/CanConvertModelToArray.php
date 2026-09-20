@@ -9,7 +9,7 @@ interface CanConvertModelToArray
 {
     /**
      * @param TModel $model
-     * @return array
+     * @return array<string, mixed>
      */
     public function toArray(DataModel $model): array;
 }

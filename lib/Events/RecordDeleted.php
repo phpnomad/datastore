@@ -8,11 +8,13 @@ use PHPNomad\Events\Interfaces\Event;
 class RecordDeleted implements Event
 {
     protected string $type;
+
+    /** @var array<string, mixed> */
     protected array $identity;
 
     /**
      * @param class-string<DataModel>|string $type
-     * @param array $identity
+     * @param array<string, mixed> $identity
      */
     public function __construct(string $type, array $identity)
     {
@@ -23,7 +25,7 @@ class RecordDeleted implements Event
     /**
      * Gets the identity for the record that was deleted.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function getIdentity(): array
     {

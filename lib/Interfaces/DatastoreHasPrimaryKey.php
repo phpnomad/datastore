@@ -21,8 +21,8 @@ interface DatastoreHasPrimaryKey
     /**
      * Retrieve a set of records by their primary keys.
      *
-     * @param array $ids
-     * @return array
+     * @param array<array-key, mixed> $ids
+     * @return array<array-key, DataModel>
      * @throws DatastoreErrorException
      */
     public function findMultiple(array $ids): array;

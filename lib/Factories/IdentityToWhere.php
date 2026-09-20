@@ -4,8 +4,10 @@ namespace PHPNomad\Datastore\Factories;
 
 class IdentityToWhere
 {
+    /** @var array<string, mixed> */
     protected array $identity;
 
+    /** @param array<string, mixed> $identity */
     public function __construct(array $identity)
     {
         $this->identity = $identity;
@@ -14,7 +16,7 @@ class IdentityToWhere
     /**
      * Returns the where statement for a given identity.
      *
-     * @return array
+     * @return array<array-key, array{column: string, operator: '=', value: mixed}>
      */
     public function toWhere(): array
     {

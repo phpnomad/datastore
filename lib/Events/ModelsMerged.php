@@ -10,14 +10,19 @@ use PHPNomad\Events\Interfaces\Event;
  */
 class ModelsMerged implements Event
 {
+    /** @var T */
     protected DataModel $mergedModel;
+
+    /** @var array<array-key, T> */
     protected array $removedModels;
+
+    /** @var T */
     protected DataModel $originalModel;
 
     /**
      * @param T $mergedModel
      * @param T $originalModel
-     * @param T[] $removedModels
+     * @param array<array-key, T> $removedModels
      */
     public function __construct(DataModel $mergedModel, DataModel $originalModel, array $removedModels)
     {
@@ -35,7 +40,7 @@ class ModelsMerged implements Event
     }
 
     /**
-     * @return T[]
+     * @return array<array-key, T>
      */
     public function getRemovedModels(): array
     {

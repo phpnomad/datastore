@@ -26,7 +26,7 @@ interface JunctionHandler
      * @param int $id
      * @param int $limit
      * @param int $offset
-     * @return array
+     * @return array<array-key, DataModel>
      * @throws DatastoreErrorException
      */
     public function getModelsFromResource(string $resource, int $id, int $limit, int $offset): array;

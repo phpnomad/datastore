@@ -6,10 +6,17 @@ use PHPNomad\Events\Interfaces\Event;
 
 class RecordUpdated implements Event
 {
+	/** @var array<string, mixed> */
 	protected array  $data;
+
+	/** @var array<string, mixed> */
 	protected array  $identity;
 	protected string $type;
 
+	/**
+	 * @param array<string, mixed> $identity
+	 * @param array<string, mixed> $data
+	 */
 	public function __construct(string $type, array $identity, array $data)
 	{
 		$this->identity = $identity;
@@ -20,7 +27,7 @@ class RecordUpdated implements Event
 	/**
 	 * Gets the data used to store the record in the database.
 	 *
-	 * @return array
+	 * @return array<string, mixed>
 	 */
 	public function getData() : array
 	{
@@ -30,7 +37,7 @@ class RecordUpdated implements Event
 	/**
 	 * Gets the identity for the record that was updated.
 	 *
-	 * @return array
+	 * @return array<string, mixed>
 	 */
 	public function getIdentity() : array
 	{
