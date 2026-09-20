@@ -1,0 +1,156 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\ModelsMerged\\:\\:getMergedModel\\(\\) should return T of PHPNomad\\\\Datastore\\\\Interfaces\\\\DataModel but returns PHPNomad\\\\Datastore\\\\Interfaces\\\\DataModel\\.$#"
+			count: 1
+			path: lib/Events/ModelsMerged.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\ModelsMerged\\:\\:getOriginalModel\\(\\) should return T of PHPNomad\\\\Datastore\\\\Interfaces\\\\DataModel but returns PHPNomad\\\\Datastore\\\\Interfaces\\\\DataModel\\.$#"
+			count: 1
+			path: lib/Events/ModelsMerged.php
+
+		-
+			message: "#^Property PHPNomad\\\\Datastore\\\\Events\\\\ModelsMerged\\:\\:\\$removedModels type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/ModelsMerged.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\RecordDeleted\\:\\:__construct\\(\\) has parameter \\$identity with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordDeleted.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\RecordDeleted\\:\\:getIdentity\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordDeleted.php
+
+		-
+			message: "#^Property PHPNomad\\\\Datastore\\\\Events\\\\RecordDeleted\\:\\:\\$identity type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordDeleted.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\RecordUpdated\\:\\:__construct\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordUpdated.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\RecordUpdated\\:\\:__construct\\(\\) has parameter \\$identity with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordUpdated.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\RecordUpdated\\:\\:getData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordUpdated.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Events\\\\RecordUpdated\\:\\:getIdentity\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordUpdated.php
+
+		-
+			message: "#^Property PHPNomad\\\\Datastore\\\\Events\\\\RecordUpdated\\:\\:\\$data type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordUpdated.php
+
+		-
+			message: "#^Property PHPNomad\\\\Datastore\\\\Events\\\\RecordUpdated\\:\\:\\$identity type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Events/RecordUpdated.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Factories\\\\IdentityToWhere\\:\\:__construct\\(\\) has parameter \\$identity with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Factories/IdentityToWhere.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Factories\\\\IdentityToWhere\\:\\:toWhere\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Factories/IdentityToWhere.php
+
+		-
+			message: "#^Property PHPNomad\\\\Datastore\\\\Factories\\\\IdentityToWhere\\:\\:\\$identity type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Factories/IdentityToWhere.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\CanConvertModelToArray\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Interfaces/CanConvertModelToArray.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\Datastore\\:\\:create\\(\\) has invalid return type PHPNomad\\\\Datastore\\\\Interfaces\\\\T\\.$#"
+			count: 1
+			path: lib/Interfaces/Datastore.php
+
+		-
+			message: "#^PHPDoc tag @return with type PHPNomad\\\\Datastore\\\\Interfaces\\\\T is not subtype of native type PHPNomad\\\\Datastore\\\\Interfaces\\\\DataModel\\.$#"
+			count: 1
+			path: lib/Interfaces/Datastore.php
+
+		-
+			message: "#^PHPDoc tag @template has invalid value \\(T of \\<DataModel\\>\\)\\: Unexpected token \"\\<\", expected type at offset 22$#"
+			count: 1
+			path: lib/Interfaces/Datastore.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\DatastoreHasPrimaryKey\\:\\:findMultiple\\(\\) has parameter \\$ids with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasPrimaryKey.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\DatastoreHasPrimaryKey\\:\\:findMultiple\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasPrimaryKey.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\DatastoreHasWhere\\:\\:andWhere\\(\\) has invalid return type PHPNomad\\\\Datastore\\\\Interfaces\\\\T\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasWhere.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\DatastoreHasWhere\\:\\:findBy\\(\\) has invalid return type PHPNomad\\\\Datastore\\\\Interfaces\\\\T\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasWhere.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\DatastoreHasWhere\\:\\:findBy\\(\\) has parameter \\$value with no type specified\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasWhere.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\DatastoreHasWhere\\:\\:orWhere\\(\\) has invalid return type PHPNomad\\\\Datastore\\\\Interfaces\\\\T\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasWhere.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\DatastoreHasWhere\\:\\:where\\(\\) has invalid return type PHPNomad\\\\Datastore\\\\Interfaces\\\\T\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasWhere.php
+
+		-
+			message: "#^PHPDoc tag @return with type PHPNomad\\\\Datastore\\\\Interfaces\\\\T is not subtype of native type PHPNomad\\\\Datastore\\\\Interfaces\\\\DataModel\\.$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasWhere.php
+
+		-
+			message: "#^PHPDoc tag @template has invalid value \\(T of \\<DataModel\\>\\)\\: Unexpected token \"\\<\", expected type at offset 22$#"
+			count: 1
+			path: lib/Interfaces/DatastoreHasWhere.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\JunctionHandler\\:\\:getModelsFromResource\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Interfaces/JunctionHandler.php
+
+		-
+			message: "#^Interface PHPNomad\\\\Datastore\\\\Interfaces\\\\ModelAdapter extends generic interface PHPNomad\\\\Datastore\\\\Interfaces\\\\CanConvertModelToArray but does not specify its types\\: TModel$#"
+			count: 1
+			path: lib/Interfaces/ModelAdapter.php
+
+		-
+			message: "#^Method PHPNomad\\\\Datastore\\\\Interfaces\\\\ModelAdapter\\:\\:toModel\\(\\) has parameter \\$array with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: lib/Interfaces/ModelAdapter.php

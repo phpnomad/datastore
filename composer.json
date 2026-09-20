@@ -4,7 +4,6 @@
     "type": "library",
     "homepage": "https://github.com/phpnomad/core",
     "readme": "README.md",
-    "version": "2.0.3",
     "license": "MIT",
     "scripts": {
         "php-cs-fixer": "php-cs-fixer fix"
@@ -25,8 +24,15 @@
             "email": "alex@standiford.us"
         }
     ],
+    "require": {
+        "phpnomad/event": "^1.0"
+    },
     "require-dev": {
-        "phpnomad/tests": "^0.1.0 || ^0.3.0"
+        "doctrine/instantiator": "^1.5",
+        "myclabs/deep-copy": ">=1.13.4 <1.14",
+        "phpnomad/tests": "^0.1.0 || ^0.3.0",
+        "phpunit/phpunit": "^9.6.33",
+        "symfony/process": "^5.4.51"
     },
     "config": {
         "allow-plugins": {
