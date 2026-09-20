@@ -19,7 +19,11 @@ interface DatastoreHasCounts {
     /**
      * Count the results with conditions, using AND/OR.
      *
-     * @param array{type: string, clauses: array{column: string, operator: string, value: mixed}[]} $conditions
+     * @param list<array{
+     *     type?: string,
+     *     groupType?: string,
+     *     clauses: list<array{column: string|list<string>, operator: string, value: mixed}>
+     * }> $conditions
      * @return int
      * @throws DatastoreErrorException
      */
