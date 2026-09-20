@@ -7,7 +7,7 @@ use PHPNomad\Datastore\Exceptions\DuplicateEntryException;
 use PHPNomad\Datastore\Exceptions\RecordNotFoundException;
 
 /**
- * @template T of <DataModel>
+ * @template T of DataModel
  */
 interface Datastore
 {

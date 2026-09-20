@@ -7,7 +7,7 @@ use PHPNomad\Datastore\Exceptions\DatastoreErrorException;
 use PHPNomad\Datastore\Exceptions\RecordNotFoundException;
 
 /**
- * @template T of <DataModel>
+ * @template T of DataModel
  */
 interface DatastoreHasWhere {
     /**
