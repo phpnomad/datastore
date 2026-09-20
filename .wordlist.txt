@@ -16,7 +16,9 @@ alex
 standiford
 socio
 GIFs
+GraphQL
 macOS
+MCP
 SDK
 runtime
 Traceback
