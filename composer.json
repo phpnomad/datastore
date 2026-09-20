@@ -24,6 +24,9 @@
             "email": "alex@standiford.us"
         }
     ],
+    "require": {
+        "phpnomad/event": "^1.0"
+    },
     "require-dev": {
         "doctrine/instantiator": "^1.5",
         "myclabs/deep-copy": ">=1.13.4 <1.14",

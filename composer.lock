@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fa283ca307757d17b39502f6c4e6736",
-    "packages": [],
+    "content-hash": "6638e777210e2a06a5c0d87ec74fd210",
+    "packages": [
+        {
+            "name": "phpnomad/event",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpnomad/event.git",
+                "reference": "b418d8fc90af18b7cb37e118795f9dd92ffeb538"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/event/zipball/b418d8fc90af18b7cb37e118795f9dd92ffeb538",
+                "reference": "b418d8fc90af18b7cb37e118795f9dd92ffeb538",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPNomad\\Events\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phpnomad/core",
+            "support": {
+                "issues": "https://github.com/phpnomad/event/issues",
+                "source": "https://github.com/phpnomad/event/tree/1.0.1"
+            },
+            "time": "2026-06-12T10:56:48+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "clue/ndjson-react",
@@ -4689,5 +4730,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
